@@ -3,6 +3,7 @@ package br.com.traive.desk_booking.domain.user;
 
 import br.com.traive.desk_booking.domain.booking.Booking;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -34,5 +35,24 @@ public class User {
         this.name= data.name();
         this.email= data.email();
         this.password = data.password();
+    }
+
+    public void deactivate() {
+        this.active=false;
+    }
+
+    public void updateInfo(UpdateUserData data) {
+        if (data.name() != null){
+            this.name= data.name();
+        }
+        if (data.email() != null){
+            this.email = data.email();
+        }
+        if(data.password() != null){
+            this.password = data.password();
+        }
+        if(data.active() != false){
+            this.active = data.active();
+        }
     }
 }
