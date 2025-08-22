@@ -27,12 +27,12 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     private BookingType bookingType;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "desk_id")
     private Desk desk;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
+    private User usuario;
 
 }

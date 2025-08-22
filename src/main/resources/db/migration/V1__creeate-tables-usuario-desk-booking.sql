@@ -8,6 +8,7 @@ create table usuario(
     primary key(id)
 );
 
+
 create table desk(
 
     id bigint not null auto_increment,

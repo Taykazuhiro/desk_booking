@@ -1,7 +1,10 @@
 package br.com.traive.desk_booking.domain.desk;
 
+import br.com.traive.desk_booking.domain.booking.Booking;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Table(name = "desk")
 @Entity(name = "Desk")
@@ -17,4 +20,7 @@ public class Desk {
     private Long id;
     private Integer deskNumber;
     private Boolean available;
+
+    @OneToMany(mappedBy = "desk")
+    private List<Booking> booking;
 }
