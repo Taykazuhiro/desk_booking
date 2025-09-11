@@ -1,0 +1,2 @@
+ALTER TABLE booking MODIFY COLUMN end_time TIME;
+ALTER TABLE booking MODIFY COLUMN start_time TIME;
